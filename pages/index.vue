@@ -2,22 +2,22 @@
 import { navbarData } from '~/data'
 
 useHead({
-  title: 'Home',
+  title: 'ماڵەوە',
   meta: [
     {
       name: 'description',
       content:
-        'Welcome To My Blog Site. Get Web Development, Javascript, Typescript, NodeJs, Vue, and Nuxt, Related Articles, Tips, Learning resources and more.',
+        'بەخێربێن بۆ بڵۆگەکەم. لێرەدا بابەت و وتار دەربارەی گەشەپێدانی وێب، جاڤاسکریپت، پایثۆن، ڕیاکت، ڤیو، و نێکست دەدۆزیتەوە، لەگەڵ ئامۆژگاری و سەرچاوەی فێربوون.',
     },
   ],
 })
 
-// Generate OG Image
+// دروستکردنی وێنەی OG
 defineOgImageComponent('About', {
-  headline: 'Greetings 👋',
+  headline: 'سڵاو و ڕێز 👋',
   title: navbarData.homeTitle,
-  description: 'Dive into web development with me and learn Js, Ts, Vue, Nuxt, Docker, k8s',
-  link: '/riyad.jpg',
+  description: 'لەگەڵ من فێری گەشەپێدانی وێب ببە - جاڤاسکریپت، تایپسکریپت، ڤیو، نێکست، دۆکەر، کوبەرنێتیس',
+  link: '/halwest.jpg', // تکایە ناوی فایلی وێنەکەت دابنێ
 })
 </script>
 

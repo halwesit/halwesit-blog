@@ -88,7 +88,7 @@ defineOgImageComponent('بڵۆگ', {
 
 <template>
   <div class="px-6 container max-w-5xl mx-auto sm:grid grid-cols-12 gap-x-12">
-    <div class="col-span-12 lg:col-span-9">
+    <div class="col-span-12 lg:col-span-9 border bg-white dark:bg-slate-900 dark:border-gray-800 p-3 px-2 rounded-xl mt-4">
       <BlogHeader
         :title="data.title"
         :image="data.image"

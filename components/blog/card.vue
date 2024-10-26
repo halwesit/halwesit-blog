@@ -25,7 +25,7 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <article class="group border dark:border-gray-800 m-2 overflow-hidden rounded-2xl shadow-sm text-zinc-700 dark:text-zinc-300">
+  <article class="group border dark:bg-slate-800 bg-white dark:border-gray-800 m-2 overflow-hidden rounded-2xl shadow-sm text-zinc-700 dark:text-zinc-300">
     <NuxtLink :to="path">
       <NuxtImg
         class="lg:h-48 md:h-36 w-full object-cover object-center rounded-t-2xl shadow-lg group-hover:scale-[1.02] transition-all duration-500"
@@ -54,7 +54,7 @@ withDefaults(defineProps<Props>(), {
         </p>
         <div class="flex group-hover:underline text-sky-700 dark:text-sky-400 items-center py-2">
           <p>زیاتر بخوێنەوە</p>
-          <LogoArrow class="rotate-180" /> <!-- چونکە نووسینی کوردی لە ڕاستەوە بۆ چەپە -->
+          <LogoArrow /> <!-- چونکە نووسینی کوردی لە ڕاستەوە بۆ چەپە -->
         </div>
       </div>
     </NuxtLink>

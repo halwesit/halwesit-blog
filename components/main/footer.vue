@@ -15,14 +15,14 @@ const path = computed(() => route.fullPath.replace('/', ''))
       </div>
 
       <div class="border-t dark:border-gray-800 mt-5 text-center p-2">
-        © ٢٠٢٠-٢٠٢٤ هەموو مافێک پارێزراوە بۆ
-        <a href="https://webs.krd" target="_blank" rel="nofollow" class="underline">Webs.krd</a>
+        © {{ new Date().getFullYear() }} هەموو مافێک پارێزراوە بۆ
+        <a href="https://t.me/halwesit" target="_blank" rel="nofollow" class="underline">HalwesIT</a>
 
-        <div class="mt-2 flex justify-center space-x-4">
+        <!-- <div class="mt-2 flex justify-center ">
           <a href="/rss.xml" title="RSS"><Icon name="bi:rss-fill" /></a>
           <a href="https://github.com/halwestarasul" target="_blank" rel="nofollow" title="GitHub"><Icon name="mdi:github" /></a>
           <a href="https://www.linkedin.com/in/halwestarasul" target="_blank" rel="nofollow" title="LinkedIn"><Icon name="mdi:linkedin" /></a>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

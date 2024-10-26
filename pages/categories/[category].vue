@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 const route = useRoute()
 
-// take category from route params & make first char upper
+// وەرگرتنی کەتەگۆری لە پارامیتەری ڕووت
 const category = computed(() => {
   const name = route.params.category || ''
   let strName = ''
@@ -22,12 +22,12 @@ const formattedData = computed(() => {
   return data.value?.map((articles) => {
     return {
       path: articles._path,
-      title: articles.title || 'no-title available',
-      description: articles.description || 'no-description available',
+      title: articles.title || 'ناونیشان بەردەست نییە',
+      description: articles.description || 'وەسف بەردەست نییە',
       image: articles.image || '/blogs-img/blog.jpg',
-      alt: articles.alt || 'no alter data available',
+      alt: articles.alt || 'وێنەی جێگرەوە بەردەست نییە',
       ogImage: articles.ogImage || '/blogs-img/blog.jpg',
-      date: articles.date || 'not-date-available',
+      date: articles.date || 'بەروار بەردەست نییە',
       tags: articles.tags || [],
       published: articles.published || false,
     }
@@ -39,17 +39,17 @@ useHead({
   meta: [
     {
       name: 'description',
-      content: `You will find all the ${category.value} related post here`,
+      content: `لێرەدا هەموو بابەتەکانی پەیوەست بە ${category.value} دەبینیت`,
     },
   ],
 })
 
-// Generate OG Image
+// دروستکردنی وێنەی OG
 const siteData = useSiteConfig()
 defineOgImage({
   props: {
     title: category.value?.toUpperCase(),
-    description: `You will find all the ${category.value} related post here`,
+    description: `لێرەدا هەموو بابەتەکانی پەیوەست بە ${category.value} دەبینیت`,
     siteName: siteData.url,
   },
 })

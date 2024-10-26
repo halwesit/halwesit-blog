@@ -1,11 +1,29 @@
-<script lang="ts" setup>
-// وەرگرتنی دوا 3 بابەتی بڵاوکراوە لە دایرێکتۆری content/blog
-const { data } = await useAsyncData('trending-post', () =>
-  queryContent('/blogs').limit(3).sort({ _id: 1 }).find(),
-)
+<script  setup>
+// دیاریکردنی ID ـی ئەو بابەتانەی دەمانەوێت
+const trendingPostIds = [
+  'fix-tailwindcss-intellisense-in-nuxt3',
+  'digital-transformation',
+  'vue3-awesome-library',
+]
+
+// وەرگرتنی بابەتە دیاریکراوەکان بەپێی ID
+const { data } = await useAsyncData('trending-post', async () => {
+  const posts = await queryContent('/blogs').find()
+  return posts.filter(post =>
+    trendingPostIds.some(id => post._path.includes(id)),
+  )
+})
 
 const formattedData = computed(() => {
-  return data.value?.map((articles) => {
+  if (!data.value)
+    return []
+
+  // ڕێکخستنی بابەتەکان بەپێی ئەو ڕیزبەندییەی کە لە trendingPostIds دیاریمان کردووە
+  const orderedPosts = trendingPostIds.map(id =>
+    data.value.find(post => post._path.includes(id)),
+  ).filter(Boolean)
+
+  return orderedPosts.map((articles) => {
     return {
       path: articles._path,
       title: articles.title || 'ناونیشان بەردەست نییە',
@@ -54,7 +72,7 @@ useHead({
           :published="post.published"
         />
       </template>
-      <template v-if="data?.length === 0">
+      <template v-if="formattedData.length === 0">
         <BlogEmpty />
       </template>
     </div>

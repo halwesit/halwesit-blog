@@ -1,24 +1,24 @@
 <script setup lang="ts">
 useHead({
-  title: '404',
+  title: 'پەڕە نەدۆزرایەوە',
   meta: [
     {
       name: 'description',
-      content: 'Page not found',
+      content: 'داواکراو نەدۆزرایەوە',
     },
   ],
 })
 
 defineOgImageComponent('About', {
-  headline: 'Wrong Path',
+  headline: 'ڕێڕەوی هەڵە',
   title: '404',
-  description: 'Page Not Found',
+  description: 'پەڕە نەدۆزرایەوە',
 })
 </script>
 
 <template>
   <div class="py-5">
-    <div class="container max-w-xl   mx-auto">
+    <div class="container max-w-xl mx-auto">
       <Logo404 />
     </div>
   </div>
